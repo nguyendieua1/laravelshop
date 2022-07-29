@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\Admin\Users\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('admin/users/login',[\App\Http\Controllers\Admin\Users\LoginController::class,'']);
+Route::get('admin/users/login',[LoginController::class,'index']);
