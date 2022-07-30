@@ -19,7 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('admin/users/login',[LoginController::class,'index']);
+Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 Route::post('admin/users/login/store',[LoginController::class,'store']);
 
-Route::get('admin/main',[MainController::class,'index'])->name('admin');
+Route::middleware(['auth'])->group(function (){
+    Route::get('admin',[MainController::class,'index'])->name('admin');
+    Route::get('admin/main',[MainController::class,'index']);
+});
+
+
