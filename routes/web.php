@@ -23,8 +23,8 @@ Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 Route::post('admin/users/login/store',[LoginController::class,'store']);
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('admin',[MainController::class,'index'])->name('admin');
-    Route::get('admin/main',[MainController::class,'index']);
+    Route::get('dashboard',[MainController::class,'index'])->name('admin');
+    //Route::get('admin/main',[MainController::class,'index']);
 });
 
 
